@@ -1,6 +1,8 @@
 # randomized-numerical-linear-algebra
 Code repository for the Applied Mathematics Directed Reading Program. 
 
+Based on [Lectures on Randomized Numerical Linear Algebra](https://arxiv.org/abs/1712.08880)
+
 # Randomized Matrix Multiplication
 Implementation of RandMult algorithm
 
