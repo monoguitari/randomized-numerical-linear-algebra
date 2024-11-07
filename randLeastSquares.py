@@ -16,9 +16,9 @@ def randLeastSquares(A: np.matrix, b: np.array, epsilon: float):
     """
     n, d = A.shape
     r = np.max(48**2 * d * np.log(40*n*d) * np.log(100**2 * d * np.log(40*n*d)), (40 * d * np.log(40 * n * d)) / epsilon)
-    S = np.zeros((r, d))
 
-    # create S matrix
+    # Creation of the samping-and-rescaling matrix S
+    S = np.zeros((r, d))
     for t in range(r):
         i_t = np.random.choice(range(n))
         # for step 3, what is i? 
@@ -26,7 +26,7 @@ def randLeastSquares(A: np.matrix, b: np.array, epsilon: float):
         e_i[i_t] = np.sqrt(n/r)
         S[t] = e_i @ A
     
-    # np.multiply = Hadamard product
+    # normalized Random Hadamard Transform O(n log_2 r)
     H =  np.multiply(n, n)/ np.sqrt(n)
     D_diags = np.random.choice([-1, 1], size=n)
     D = np.diag(D_diags)
